@@ -53,74 +53,8 @@ client.crypto.factorize(TSDKParamsOfFactorize(composite: "17ED48941A08F981")) { 
 
 ### Install sdk with bash script
 
-0. create folder for TONSDK, for example 
-```mkdir ./TONSDK```
-1. ```cd ./TONSDK```
-2. ```bash path_to_this_library/scripts/install_tonsdk.sh```
-
-### Manual install sdk ( if you have any problem with script install_tonsdk.sh )
-
-<details>
-  <summary>SPOILER: Manual installation</summary>
-
-0. Install Rust to your OS   
-1. git clone https://github.com/tonlabs/TON-SDK   
-2. cd ./TON-SDK
-3. cargo update
-4. cargo build --release
-5. copy or create symlink of dynamic library    
-macOS :  
-**./TON-SDK/target/release/libton_client.dylib**  
-to   
-**/usr/local/lib/libton_client.dylib**  
-    
-    Linux :  
-**./TON-SDK/target/release/libton_client.so**     
-to    
-**/usr/lib/libton_client.so**  
-6. Create pkgConfig file :  
-    
-macOS :  
-    **/usr/local/lib/pkgconfig/libton_client.pc**  
-
-```bash
-
-prefix=/usr/local
-exec_prefix=${prefix}
-includedir=${prefix}/include
-libdir=${exec_prefix}/lib
-
-Name: ton_client
-Description: ton_client
-Version: 1.0.0
-Cflags: -I${includedir}
-Libs: -L${libdir} -lton_client
-
-```
-Linux:  
-    **/usr/lib/pkgconfig/libton_client.pc**  
-    
-```bash
-prefix=/usr
-exec_prefix=${prefix}
-includedir=${prefix}/include
-libdir=${exec_prefix}/lib
-
-Name: ton_client
-Description: ton_client
-Version: 1.0.0
-Cflags: -I${includedir}
-Libs: -L${libdir} -lton_client
-```
-7. Copy or create symlink of file   
-**/TON-SDK/ton_client/client/tonclient.h**  
-to  
-MacOS:  
-**/usr/local/include/tonclient.h**  
-Linux:  
-**/usr/include/tonclient.h**  
-
-</details>
+0. ```cd path_to_this_library```
+1. ```bash ./scripts/install_tonsdk_desktop.sh```
 
 ## Setup TONSDK For iOS
 
