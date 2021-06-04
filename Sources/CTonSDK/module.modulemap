@@ -1,4 +1,0 @@
-module CTonSDK [system] {
-  header "shim.h"
-  export *
-}
